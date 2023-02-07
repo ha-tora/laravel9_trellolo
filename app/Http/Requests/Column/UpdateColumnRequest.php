@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Column;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCommentRequest extends FormRequest
+class UpdateColumnRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

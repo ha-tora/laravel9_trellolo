@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CardResource extends JsonResource
+class UserShortResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,6 +14,9 @@ class CardResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name
+        ];
     }
 }

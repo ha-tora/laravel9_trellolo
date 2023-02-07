@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Home;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\User\UserResource;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -11,7 +12,7 @@ class HomeController extends Controller
     {
         return [
             '_token' => csrf_token(),
-            'user' => Auth::user(),
+            'user' => Auth::user() ? new UserResource(Auth::user()) : null,
         ];
     }
 }

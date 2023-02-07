@@ -15,14 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Column::factory(20)
-            ->sequence(fn($sequence) => ['owner_id' => User::all('id')->random()])
+            ->sequence(fn($sequence) => ['user_id' => User::all('id')->random()])
             ->create();
         Card::factory(30)
-            ->sequence(fn($sequence) => ['owner_id' => User::all('id')->random()])
+            ->sequence(fn($sequence) => ['user_id' => User::all('id')->random()])
             ->sequence(fn($sequence) => ['column_id' => Column::all('id')->random()])
             ->create();
         Comment::factory(50)
-            ->sequence(fn($sequence) => ['owner_id' => User::all('id')->random()])
+            ->sequence(fn($sequence) => ['user_id' => User::all('id')->random()])
             ->sequence(fn($sequence) => ['card_id' => Card::all('id')->random()])
             ->create();
     }
