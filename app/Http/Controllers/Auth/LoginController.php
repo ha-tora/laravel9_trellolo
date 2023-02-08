@@ -23,9 +23,9 @@ class LoginController extends Controller
         $validated = $request->validated();
 
         if (!Auth::attempt($validated)) {
-            return back()->withErrors([
+            return [
                 'failed' => trans('failed')
-            ]);
+            ];
         }
 
         $request->session()->regenerate();

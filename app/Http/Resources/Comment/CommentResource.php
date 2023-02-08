@@ -18,7 +18,7 @@ class CommentResource extends JsonResource
         return [
             'id' => $this->id,
             'text' => $this->text,
-            'user' => UserShortResource::collection($this->user)
+            'user' => new UserShortResource($this->user)
         ];
     }
 }

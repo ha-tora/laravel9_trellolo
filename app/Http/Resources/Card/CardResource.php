@@ -20,7 +20,7 @@ class CardResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            'user' => UserShortResource::collection($this->user),
+            'user' => new UserShortResource($this->user),
             'comments' => CommentResource::collection($this->comments)
         ];
     }
